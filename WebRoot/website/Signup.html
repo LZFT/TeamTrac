@@ -52,7 +52,7 @@
     <br>
  <div class="container ">
 
-      <form class="form-signin">
+      <form class="form-signin" role="form" data-toggle="validator" method="" action="">
         <h2 class="form-signin-heading text-center">请注册</h2>
         <hr class="featurette-divider">
         <div class="form-group">
@@ -61,16 +61,19 @@
         </div>
 
 		<div class="form-group">
-			<label for="inputEmail" class="sr-only">邮箱</label>
-        	<input type="email" id="inputEmail" class="form-control" placeholder="邮箱" required autofocus>
+			<label for="inputEmail" class="sr-only control-label">邮箱</label>
+        	<input type="email" id="inputEmail" class="form-control" placeholder="邮箱" data-error="邮箱格式错误！" required autofocus>
+            <div class="help-block with-errors"></div>
 		</div>
 		<div class="form-group">
-			<label for="inputPassword" class="sr-only">密码</label>
-        	<input type="password" id="inputPassword" class="form-control" placeholder="密码" required autofocus>
+			<label for="inputPassword" class="sr-only">密码 </label>
+        	<input type="password" data-toggle="validator" data-minlength="6" id="inputPassword" class="form-control" placeholder="密码   长度请大于六位！" data-error="密码长度请大于六位！" required autofocus>
+            <div class="help-block with-errors"></div>
 		</div>
 		<div class="form-group">
 			<label for="repeatPassword" class="sr-only">重复密码</label>
-        	<input type="password" id="repeatPassword" class="form-control" placeholder="重复密码" required >
+        	<input type="password" data-toggle="validator" data-minlength="6" id="repeatPassword" data-match="#inputPassword" data-match-error="两次密码不一致！" data-error="密码长度请大于六位！" class="form-control" placeholder="重复密码" required >
+            <div class="help-block with-errors"></div>
 		</div>
         <br>
         <button class="btn btn-lg btn-danger btn-block" type="submit">注册</button>
@@ -90,9 +93,13 @@
         </div>
     </footer>
 
+<!--script
+    =================================================== -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-1.11.3.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <!--validate-->
+    <script src="js/validator.js"></script>
 </body>
 </html>
