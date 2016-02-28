@@ -34,6 +34,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>net.nw.vo.jobdataorigi</value>
+				<value>net.nw.vo.personInformation</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -53,5 +54,6 @@
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	<bean id="jobInfoDAO" class="net.nw.DAOImpl.jobInfoDAO"></bean>
+	<bean id="personInfoDAO" class="net.nw.DAOImpl.personInfoDAO"></bean>
+	<bean id="checkSQLInject" class="net.nw.service.checkSQLInject"></bean>
 	</beans>

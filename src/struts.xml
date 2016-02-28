@@ -2,6 +2,20 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<constant name="struts.devMode" value="true"/>
-	<constant name="struts.configuration.xml.reload" value="true"/>
+	<constant name="struts.i18n.encoding" value="utf-8"/>
+	
+	<!-- 人员信息管理 -->
+	<package name="person_register" namespace="/" extends="struts-default">
+		<action name="register" class="net.nw.service.registerAction" method="register">
+			<result name="register_success" type="redirect">website/jsp/Login.jsp</result>
+		</action>
+	</package>
+	
+	<package name="person_login" namespace="/website/jsp" extends="struts-default">
+		<action name="login" class="net.nw.service.loginAction" method="login">
+			<result name="login_success" type="redirect">index.jsp</result>
+		</action>
+	
+	</package>
 
 </struts>    
