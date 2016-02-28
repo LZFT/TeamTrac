@@ -1,10 +1,293 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-	<meta charset="UTF-8">
-	<title>SearchShow</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">  
+    <link rel="icon" href="../../favicon.ico">
+    <title>搜索</title> 
+     <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/search.css" rel="stylesheet">
 </head>
 <body>
+<!-- Fixed navbar
+    ================================================== -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">软件工程职业平台</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">主页</a></li>
+            <li><a href="#about">职业分析</a></li>
+            <li><a href="#contact">个人评估</a></li>
+            <li><a href="#contact">员工推荐</a></li>
+          </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+            <li ><a href="#"><span>登录</span></a></li>
+            <li ><a href="#">注册</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>	
+
+
+<!-- search-container
+    ================================================== -->  
+    <div class="search-container row" >
+    
+    <!-- Search Bar -->
+        <form class="container form-inline " id="search-form">
+            <div class="col-md-10"> <!-- 栅格化 -->
+                <div class="form-group col-md-10"> 
+                    <label class="sr-only" for="searchcontent"></label>
+                	<input type="text" class="form-control " id="searchcontent" placeholder="请输入职位名称或公司名称...">
+                </div>
+                <button type="submit" class="btn btn-danger col-md-2 " id="submit">搜索</button>
+            </div>
+        </form>
+    </div>   
+
+<!-- main content
+    =================================================== -->
+    <div class="container main-content">
+    <div class="row"> 	
+    
+    <!-- 筛选项 -->
+        <div class="col-md-10" id="filter">
+            <!-- 工作地点 -->
+            <div role="tabpanel" class="tab-pane " id="workingspace">
+            	<span><b>工作地点：</b></span>
+            	<a href="#" role="button" class="active" name="country">全国</a>
+                <a href="#" role="button" class="">北京</a>
+                <a href="#" role="button" class="">上海</a>
+                <a href="#" role="button" class="">深圳</a>
+                <a href="#" role="button" class="">广州</a>
+                <a href="#" role="button" class="">杭州</a>
+                <a href="#" role="button" class="">成都</a>
+                <a href="#" role="button" class="">南京</a>
+                <a href="#" role="button" class="">武汉</a>
+                <a href="#" role="button" class="">西安</a>
+                <a href="#" role="button" class="">厦门</a>
+                <a href="#" role="button" class="">苏州</a>
+                <!-- 更多城市 默认不展开-->
+                <a class="btn " role="button" data-toggle="collapse" href="#collapseMore" aria-expanded="false" aria-controls="collapseMore">更多&nbsp;<span class="caret"></span><i></i></a>
+                <div class="collapse" id="collapseMore">
+                    <a href="#" role="button" class="">重庆</a>
+                    <a href="#" role="button" class="">郑州</a>
+                    <a href="#" role="button" class="">青岛</a>
+                    <a href="#" role="button" class="">合肥</a>
+                    <a href="#" role="button" class="">福州</a>
+                    <a href="#" role="button" class="">济南</a>
+                    <a href="#" role="button" class="">大连</a>
+                    <a href="#" role="button" class="">珠海</a>
+                    <a href="#" role="button" class="">无锡</a>
+                    <a href="#" role="button" class="">佛山</a>
+                    <a href="#" role="button" class="">东莞</a>
+                    <a href="#" role="button" class="">宁波</a>
+                    <a href="#" role="button" class="">常州</a>
+                    <a href="#" role="button" class="">沈阳</a>
+                    <a href="#" role="button" class="">石家庄</a>
+                    <a href="#" role="button" class="">昆明</a>
+                    <a href="#" role="button" class="">南昌</a>
+                    <a href="#" role="button" class="">南宁</a>
+                    <a href="#" role="button" class="">哈尔滨</a>
+                    <a href="#" role="button" class="">海口</a>
+                    <a href="#" role="button" class="">中山</a>
+                    <a href="#" role="button" class="">惠州</a>
+                    <a href="#" role="button" class="">贵阳</a>
+                    <a href="#" role="button" class="">长春</a>
+                    <a href="#" role="button" class="">太原</a>
+                    <a href="#" role="button" class="">嘉兴</a>
+                    <a href="#" role="button" class="">泰安</a>
+                    <a href="#" role="button" class="">昆山</a>
+                    <a href="#" role="button" class="">烟台</a>
+                    <a href="#" role="button" class="">兰州</a>
+                    <a href="#" role="button" class="">泉州</a>
+                </div>
+
+            </div>
+            <!-- 工作经验 -->
+            <div role="tabpanel" class="tab-pane" id="experience">
+            	<span><b>工作经验：</b></span>
+            	<a href="#" role="button" class="active">不限</a>
+                <a href="#" role="button" class="">应届毕业生</a>
+                <a href="#" role="button" class="">1年以下</a>
+                <a href="#" role="button" class="">1-3年</a>
+                <a href="#" role="button" class="">3-5年</a>
+                <a href="#" role="button" class="">5-10年</a>
+                <a href="#" role="button" class="">10年以上</a>
+
+            </div>
+            <!-- 学历要求 -->
+            <div role="tabpanel" class="tab-pane" id="education">
+            	<span><b>学历要求：</b></span>
+            	<a href="#" role="button" class="active">不限</a>
+                <a href="#" role="button" class="">大专</a>
+                <a href="#" role="button" class="">本科</a>
+                <a href="#" role="button" class="">硕士</a>
+                <a href="#" role="button" class="">博士</a>
+            </div>
+
+        </div>
+        <!--筛选项end-->
+    
+    
+        <div class="col-md-10 " id="sort">
 	
+          <div class="col-md-9">
+          <!-- 月薪下拉框-->
+        	<span><b>月薪：</b></span>
+        	<div class="btn-group">     	    
+            	<button id="moneyLabel" class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown"  aria-expanded="false">不限&nbsp;&nbsp;<span class="caret"></span></button>
+                <ul class="dropdown-menu" aria-labelledby="moneyLabel">
+                   <li ><a class="" href="#">不限</a></li>
+                   <li ><a href="#">2k以下</a></li>
+                   <li ><a href="#">2k-5k</a></li>
+                   <li ><a href="#">5k-10k</a></li>
+                   <li ><a href="#">10k-15k</a></li>
+                   <li ><a href="#">15k-25k</a></li>
+                   <li ><a href="#">25k-50k</a></li>
+                   <li ><a href="#">50k以上</a></li>
+                </ul>   		
+        	</div><!-- 月薪btn-group end -->
+           
+          <!-- 工作性质下拉框-->
+        	<span><b>工作性质：</b></span>
+        	<div class="btn-group">        	    
+        	    <button id="jobLabel" type="button" class="btn btn-default btn-sm  dropdown-toggle" data-toggle="dropdown"  aria-expanded="false">不限&nbsp;&nbsp;<span class="caret"></span></button>
+                <ul class="dropdown-menu" aria-labelledby="jobLabel">
+                  <li ><a href="#">不限</a></li>
+                  <li ><a href="#">全职</a></li>
+                  <li ><a href="#">实习</a></li>
+                  <li ><a href="#">兼职</a></li>
+                </ul>
+            </div>
+          </div>
+
+          <!-- 排序方式-->
+           <div class="sortway col-md-3">
+        	<span><b>排序方式：</b></span>
+        	<a href="#">默认</a>
+        	<a href="#">最新</a>
+           </div>
+        </div><!-- sort end -->
+        <!--排序项end-->
+
+
+    <!-- 职位列表-->
+        <div class=" " id="result-list">
+
+            <ul class="item-list  " id="item-list">
+
+                <li class="item-con col-md-10" id="item-con" data-index="0" data-positionid="1475127" data-salary="12k-20k" data-company="百航信息" data-positionname="java开发工程师" data-companyid="14095">
+                    <div class="list_item_top ">
+                        <!--职位信息 -->
+                        <div class="position ">
+                            <!--左 职位信息-->
+                            <div class=" col-md-6">
+                                <div class="p_top">
+                                    <a class="position_link" href="#" target="_blank" data-index="0" data-lg-tj-id="8E00" data-lg-tj-no="0100"     data-lg-tj-cid="1475127">
+                                        <h3>java开发工程师</h3>
+                                        <h4 class="add">[杭州]</h4>
+                                    </a>
+                                    <span class="format-time">1天前发布</span>
+                                </div>
+
+                                <div class="p_bot">
+                                    <span class="money "><h4>12k-20k</h4></span>
+                                    <span class="p_bot_exp">经验3-5年</span>
+                                    <span>/</span>
+                                    <span class="p_bot_edu">本科</span>
+                                </div>
+                            </div>
+                            <!--右 公司信息-->
+                            <div class="company col-md-6">
+                                <div class="company_name">
+                                    <a href="#" target="_blank" data-lg-tj-id="8F00" data-lg-tj-no="0100" data-lg-tj-cid="14095"><h3>百航信息</h3></a>
+                                </div>
+                                <span class="compny_intro">
+                                	移动互联网
+                                </span>
+                            </div><!-- company end -->
+                        </div> <!-- position end -->
+                        <!-- 职位说明-->
+                        <div class="list_item_bot col-md-12">           
+                            <div class="li_b_r">             
+                                <span>五险一金</span>            
+                                <span>通讯津贴</span>
+                                <span>交通补助</span>  
+                                <span>带薪年假</span>             
+                            </div>
+                        </div><!-- list_item_bot end -->
+                </li>
+            	
+            </ul>
+        </div> <!-- result-list end -->
+
+    </div> <!-- row end -->
+    </div><!-- main-content end -->
+
+
+
+
+
+
+<!-- 分页 -->
+	<div class="page  ">
+        <ul class="pagination  ">
+           <li class="disabled ">
+             <a href="#" aria-label="Previous">
+               <span aria-hidden="true">上一页</span>
+             </a>
+           </li>
+           <li class="active"><a href="#">1</a></li>
+           <li ><a href="# ">2</a></li>
+           <li ><a href="#">3</a></li>
+           <li ><a href="#">4</a></li>
+           <li ><a href="#">5</a></li>
+           <li>
+             <a href="#" aria-label="Next">
+               <span aria-hidden="true">下一页</span>
+             </a>
+           </li>
+        </ul>
+
+    </div><!--  page container end-->
+
+    
+
+
+<!-- footer 
+    ================================================== -->
+    <footer class=" footer">
+    <hr class="featurette-divider">
+        <div class="container">
+            <p class="text-center">Copyright&copy; LZFT. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+
+<!--script
+    =================================================== 
+    <!- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>
